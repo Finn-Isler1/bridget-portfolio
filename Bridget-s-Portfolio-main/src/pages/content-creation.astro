@@ -1,0 +1,227 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WorkNav from "../components/WorkNav.astro";
+
+const title = "Work";
+---
+
+<Layout>
+  <div class="spacer"></div>
+  <WorkNav />
+
+  <!-- Main Content Creation Section -->
+  <section id="content-creation">
+    <h1>CONTENT CREATION</h1>
+
+    <!-- Main Phones Grid -->
+    <div class="main-phones-grid">
+      <!-- Phone 1 -->
+      <div class="phone-card">
+        <div class="phone-frame">
+          <video
+            class="phone-video"
+            src="https://www.example.com/placeholder-video1.mp4"
+            muted
+            loop
+            preload="metadata"
+          ></video>
+        </div>
+        <div class="phone-info">
+          <h2 class="video-title">Video Title 1</h2>
+          <p class="video-description">Short description of the video content</p>
+          <p class="video-views">Views: 1234</p>
+          <a class="video-link" href="https://www.tiktok.com/@user/video/1234567890" target="_blank">Watch on TikTok</a>
+        </div>
+      </div>
+
+      <!-- Phone 2 -->
+      <div class="phone-card">
+        <div class="phone-frame">
+          <video
+            class="phone-video"
+            src="https://www.example.com/placeholder-video2.mp4"
+            muted
+            loop
+            preload="metadata"
+          ></video>
+        </div>
+        <div class="phone-info">
+          <h2 class="video-title">Video Title 2</h2>
+          <p class="video-description">Short description of the video content</p>
+          <p class="video-views">Views: 5678</p>
+          <a class="video-link" href="https://www.tiktok.com/@user/video/2345678901" target="_blank">Watch on TikTok</a>
+        </div>
+      </div>
+
+      <!-- Phone 3 -->
+      <div class="phone-card">
+        <div class="phone-frame">
+          <video
+            class="phone-video"
+            src="https://www.example.com/placeholder-video3.mp4"
+            muted
+            loop
+            preload="metadata"
+          ></video>
+        </div>
+        <div class="phone-info">
+          <h2 class="video-title">Video Title 3</h2>
+          <p class="video-description">Short description of the video content</p>
+          <p class="video-views">Views: 9012</p>
+          <a class="video-link" href="https://www.tiktok.com/@user/video/3456789012" target="_blank">Watch on TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smaller Phones for Other Videos -->
+    <h2>Other Videos</h2>
+    <div class="small-phones-grid">
+      <div class="small-phone">
+        <video class="small-video" src="https://www.example.com/placeholder-small1.mp4" muted loop></video>
+      </div>
+      <div class="small-phone">
+        <video class="small-video" src="https://www.example.com/placeholder-small2.mp4" muted loop></video>
+      </div>
+      <div class="small-phone">
+        <video class="small-video" src="https://www.example.com/placeholder-small3.mp4" muted loop></video>
+      </div>
+      <div class="small-phone">
+        <video class="small-video" src="https://www.example.com/placeholder-small4.mp4" muted loop></video>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.spacer {
+  height: 8px;
+}
+
+#content-creation {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+#content-creation h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-family: var(--serif);
+}
+
+/* Main Phones Grid */
+.main-phones-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.phone-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* main phone width */
+}
+
+.phone-frame {
+  width: 200px;
+  height: 400px; /* typical phone shape */
+  border: 2px solid var(--dark-text);
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.phone-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video Info */
+.phone-info {
+  text-align: center;
+}
+
+.video-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.video-description {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.video-views {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border-radius: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.video-link:hover {
+  opacity: 0.8;
+}
+
+/* Small Phones Grid */
+.small-phones-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.small-phone {
+  width: 120px;
+  height: 240px;
+  border: 2px solid var(--dark-text);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.small-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover play */
+.phone-frame video,
+.small-phone video {
+  transition: transform 0.2s;
+}
+
+.phone-frame video:hover,
+.small-phone video:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+  // Play video on hover (main phones)
+  document.querySelectorAll('.phone-frame video').forEach((vid) => {
+    vid.addEventListener('mouseenter', () => vid.play());
+    vid.addEventListener('mouseleave', () => vid.pause());
+  });
+
+  // Play video on hover (small phones)
+  document.querySelectorAll('.small-phone video').forEach((vid) => {
+    vid.addEventListener('mouseenter', () => vid.play());
+    vid.addEventListener('mouseleave', () => vid.pause());
+  });
+</script>
