@@ -2,226 +2,298 @@
 import Layout from "../layouts/Layout.astro";
 import WorkNav from "../components/WorkNav.astro";
 
-const title = "Work";
+
+const videos = [
+{
+title: "Red Cup Day",
+description: "@bridgetthebarista",
+views: "841.7K views",
+src: "/videos/v12300gd0001d4ag7kfog65rp8c3105g.mp4",
+tiktok: "https://www.tiktok.com/t/ZThnvV3LT/"
+},
+{
+title: "Brown Sugar Foam",
+description: "@starbucks",
+views: "266.7K views",
+src: "/videos/v12025gd0000d0f5i3vog65r25d3e810.mp4",
+tiktok: "https://www.tiktok.com/t/ZThnvVg76/"
+},
+{
+title: "Red Apron Hype",
+description: "@starbuckspartners",
+views: "20.8K views",
+src: "/videos/v15044gf0000d4afkcfog65r962844ng.mp4",
+tiktok: "https://www.tiktok.com/t/ZThnvnBm5/"
+},
+{
+title: "Eggnog Is Back",
+description: "@bridgetthebarista",
+views: "",
+src: "/videos/v12300gd0001d4nkc67og65kk9cd220g.mp4",
+tiktok: "https://www.tiktok.com/t/ZThnvuHCM/"
+},
+{
+title: "Apple is Back",
+description: "@bridgetthebarista",
+views: "",
+src: "/videos/v12300gd0001d3jb7kfog65osju6uppg.mp4",
+tiktok: "https://www.tiktok.com/t/ZThnvtHxX/"
+}
+];
 ---
 
 <Layout>
-  <div class="spacer"></div>
-  <WorkNav />
 
-  <!-- Main Content Creation Section -->
-  <section id="content-creation">
-    <h1>CONTENT CREATION</h1>
+<div class="spacer"></div>
+<WorkNav />
 
-    <!-- Main Phones Grid -->
-    <div class="main-phones-grid">
-      <!-- Phone 1 -->
-      <div class="phone-card">
-        <div class="phone-frame">
-          <video
-            class="phone-video"
-            src="https://www.example.com/placeholder-video1.mp4"
-            muted
-            loop
-            preload="metadata"
-          ></video>
-        </div>
-        <div class="phone-info">
-          <h2 class="video-title">Video Title 1</h2>
-          <p class="video-description">Short description of the video content</p>
-          <p class="video-views">Views: 1234</p>
-          <a class="video-link" href="https://www.tiktok.com/@user/video/1234567890" target="_blank">Watch on TikTok</a>
-        </div>
-      </div>
+<section id="content-creation">
 
-      <!-- Phone 2 -->
-      <div class="phone-card">
-        <div class="phone-frame">
-          <video
-            class="phone-video"
-            src="https://www.example.com/placeholder-video2.mp4"
-            muted
-            loop
-            preload="metadata"
-          ></video>
-        </div>
-        <div class="phone-info">
-          <h2 class="video-title">Video Title 2</h2>
-          <p class="video-description">Short description of the video content</p>
-          <p class="video-views">Views: 5678</p>
-          <a class="video-link" href="https://www.tiktok.com/@user/video/2345678901" target="_blank">Watch on TikTok</a>
-        </div>
-      </div>
+<h1>CONTENT CREATION</h1>
 
-      <!-- Phone 3 -->
-      <div class="phone-card">
-        <div class="phone-frame">
-          <video
-            class="phone-video"
-            src="https://www.example.com/placeholder-video3.mp4"
-            muted
-            loop
-            preload="metadata"
-          ></video>
-        </div>
-        <div class="phone-info">
-          <h2 class="video-title">Video Title 3</h2>
-          <p class="video-description">Short description of the video content</p>
-          <p class="video-views">Views: 9012</p>
-          <a class="video-link" href="https://www.tiktok.com/@user/video/3456789012" target="_blank">Watch on TikTok</a>
-        </div>
-      </div>
-    </div>
+<div class="video-grid">
 
-    <!-- Smaller Phones for Other Videos -->
-    <h2>Other Videos</h2>
-    <div class="small-phones-grid">
-      <div class="small-phone">
-        <video class="small-video" src="https://www.example.com/placeholder-small1.mp4" muted loop></video>
-      </div>
-      <div class="small-phone">
-        <video class="small-video" src="https://www.example.com/placeholder-small2.mp4" muted loop></video>
-      </div>
-      <div class="small-phone">
-        <video class="small-video" src="https://www.example.com/placeholder-small3.mp4" muted loop></video>
-      </div>
-      <div class="small-phone">
-        <video class="small-video" src="https://www.example.com/placeholder-small4.mp4" muted loop></video>
-      </div>
-    </div>
-  </section>
+{videos.map((video, index) => (
+
+<div class="video-card">
+
+<div class="phone-frame" data-video={video.src}>
+
+<video
+class="preview-video"
+src={video.src}
+muted
+loop
+autoplay
+playsinline
+></video>
+
+</div>
+
+<div class="video-info">
+
+<h2 class="video-title">{video.title}</h2>
+
+<p class="video-description">{video.description}</p>
+
+{video.views && <p class="video-views">{video.views}</p>}
+
+<a
+class="video-link"
+href={video.tiktok}
+target="_blank"
+>
+Watch on TikTok
+</a>
+
+</div>
+
+</div>
+
+))}
+
+</div>
+
+
+
+</section>
+
+<div id="videoModal" class="modal">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<video id="modalVideo" controls preload="metadata" playsinline>
+    Your browser does not support HTML5 video.
+  </video>
+
+</div>
+
 </Layout>
 
 <style>
+
 .spacer {
   height: 8px;
 }
 
-#content-creation {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+
+#content-creation{
+max-width:1200px;
+margin:auto;
+padding:2rem;
+text-align:center;
 }
 
-#content-creation h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 3rem;
-  font-family: var(--serif);
+h1{
+font-family:"Times New Roman", serif;
+font-size:3rem;
+margin-bottom:3rem;
 }
 
-/* Main Phones Grid */
-.main-phones-grid {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
+.video-grid{
+display:flex;
+gap:2rem;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.phone-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px; /* main phone width */
+.video-card{
+width:200px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-.phone-frame {
-  width: 200px;
-  height: 400px; /* typical phone shape */
-  border: 2px solid var(--dark-text);
-  border-radius: 2rem;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  position: relative;
+.phone-frame{
+width:200px;
+height:380px;
+border:2px solid black;
+border-radius:2rem;
+overflow:hidden;
+cursor:pointer;
+transition:0.2s;
 }
 
-.phone-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.phone-frame:hover{
+transform:scale(1.05);
 }
 
-/* Video Info */
-.phone-info {
-  text-align: center;
+.preview-video{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-.video-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+.video-info{
+text-align:center;
+margin-top:0.5rem;
 }
 
-.video-description {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+.video-title{
+font-family:"Times New Roman", serif;
+font-weight:bold;
+font-size:1.2rem;
 }
 
-.video-views {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+.video-description{
+color:#777;
+font-size:0.95rem;
 }
 
-.video-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: var(--light-text);
-  border-radius: 1rem;
-  font-weight: 600;
-  text-decoration: none;
+.video-views{
+color:#999;
+font-size:0.9rem;
 }
 
-.video-link:hover {
-  opacity: 0.8;
+.video-link{
+display:inline-block;
+margin-top:0.5rem;
+padding:0.4rem 0.9rem;
+background-color:var(--primary-color);
+color:white;
+border-radius:1rem;
+text-decoration:none;
+font-weight:600;
 }
 
-/* Small Phones Grid */
-.small-phones-grid {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.video-link:hover{
+opacity:0.8;
 }
 
-.small-phone {
-  width: 120px;
-  height: 240px;
-  border: 2px solid var(--dark-text);
-  border-radius: 1.5rem;
-  overflow: hidden;
+.modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
 }
 
-.small-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.modal video{
+max-height:80%;
+border-radius:1rem;
 }
 
-/* Hover play */
-.phone-frame video,
-.small-phone video {
-  transition: transform 0.2s;
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
 }
 
-.phone-frame video:hover,
-.small-phone video:hover {
-  transform: scale(1.05);
-}
 </style>
 
 <script>
-  // Play video on hover (main phones)
-  document.querySelectorAll('.phone-frame video').forEach((vid) => {
-    vid.addEventListener('mouseenter', () => vid.play());
-    vid.addEventListener('mouseleave', () => vid.pause());
-  });
 
-  // Play video on hover (small phones)
-  document.querySelectorAll('.small-phone video').forEach((vid) => {
-    vid.addEventListener('mouseenter', () => vid.play());
-    vid.addEventListener('mouseleave', () => vid.pause());
-  });
+const modalPlayer = document.getElementById("modalVideo")
+if (modalPlayer) {
+  modalPlayer.addEventListener("error", () => {
+    console.error("Video failed to load:", modalPlayer.error)
+  })
+}
+
+/**
+ * Get the configured video src for a given card index.
+ * This keeps the modal synced with the rendered list.
+ */
+function getVideoSrcForIndex(index) {
+  const frame = document.querySelectorAll(".phone-frame")[index]
+  return frame?.dataset?.video ?? ""
+}
+
+// attach click listeners to every video card
+document.querySelectorAll(".phone-frame").forEach((frame, index) => {
+  frame.addEventListener("click", () => {
+    openModal(index)
+  })
+})
+
+function openModal(index){
+
+  const modal = document.getElementById("videoModal")
+  const player = document.getElementById("modalVideo")
+
+  const src = getVideoSrcForIndex(index)
+  if (!src) {
+    console.error("No video source found for index", index)
+    return
+  }
+
+  player.src = src
+  player.load()
+
+  modal.style.display = "flex"
+
+  player.play().catch((err) => {
+    // Autoplay might be blocked; user can press play manually.
+    console.warn("Video playback prevented:", err)
+  })
+
+}
+
+function closeModal(){
+
+const modal = document.getElementById("videoModal")
+const player = document.getElementById("modalVideo")
+
+player.pause()
+modal.style.display="none"
+
+}
+
+// Close modal when clicking outside the video
+document.getElementById("videoModal").addEventListener("click", (e) => {
+  if (e.target.id === "videoModal") {
+    closeModal();
+  }
+});
+
+
+
 </script>
