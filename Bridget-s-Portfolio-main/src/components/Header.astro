@@ -1,6 +1,11 @@
 ---
 const { pathname } = Astro.url;
 
+const base = "/bridget-portfolio";
+const currentPath = pathname.startsWith(base)
+  ? pathname.slice(base.length) || "/"
+  : pathname;
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
@@ -15,7 +20,7 @@ const links = [
       links.map((link) => (
         <a
           href={link.href}
-          class:list={["nav-link", { active: pathname === link.href }]}
+          class:list={["nav-link", { active: currentPath === link.href }]}
         >
           {link.label}
         </a>
