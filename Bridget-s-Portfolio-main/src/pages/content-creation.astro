@@ -79,6 +79,31 @@ const videos = [
       }
     </div>
   </section>
+  <section id="text">
+    <div class="text-wrapper">
+      <h1 class="content-header">About My Content</h1>
+      <p>
+        I create short-form video content centered around authentic
+        behind-the-scenes moments as a Starbucks barista. My content focuses on
+        storytelling, humor, and everyday experiences that resonate with both
+        customers and partners.
+      </p>
+      <p>
+        I have been part of the Starbucks Green Apron Creator program for over a
+        year, beginning in the original pilot team of eight creators. Through
+        this program, I completed multiple training and mentorship programs
+        focused on content strategy, brand storytelling, and responsible digital
+        creation.
+      </p>
+      <p>
+        My work has been recognized internally and externally, including being
+        highlighted at the Starbucks Leadership Experience 2025 for successful
+        creator content. I also produce training videos designed to help new
+        creators understand topics such as content strategy, copyright, and
+        brand-safe storytelling.
+      </p>
+    </div>
+  </section>
 
   <div id="videoModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -90,8 +115,31 @@ const videos = [
 </Layout>
 
 <style>
+  .text-wrapper {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin: auto;
+    outline: 2px solid var(--dark-text);
+    background-color: var(--background-color-light);
+    max-width: 800px;
+  }
+
+  .content-header {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .text-wrapper p {
+    margin-bottom: 1rem;
+  }
   .spacer {
     height: 8px;
+  }
+
+  #text {
+    padding-bottom: 2rem;
   }
 
   #content-creation {
