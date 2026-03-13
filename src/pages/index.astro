@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import bridgetPic from "../assets/bridget-pic.jpg";
 
 const title = "Home";
 ---
@@ -23,11 +24,11 @@ const title = "Home";
       <div>
         <img
           class="hero--image"
-          src="src/assets/bridget-pic.jpg"
+          src={bridgetPic}
           alt="Picture of Bridget Baron"
         />
       </div>
-      <a href="/work" class="hero--button">View my work</a>
+      <a href="/bridget-portfolio/work" class="hero--button">View my work</a>
     </div>
   </section>
   <hr />
