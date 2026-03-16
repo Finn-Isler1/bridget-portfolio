@@ -82,30 +82,6 @@ const videos = [
     </div>
   </section>
   <section id="text">
-    <div class="text-wrapper">
-      <h1 class="content-header">About My Content</h1>
-      <p>
-        I create short-form video content centered around authentic
-        behind-the-scenes moments as a Starbucks barista. My content focuses on
-        storytelling, humor, and everyday experiences that resonate with both
-        customers and partners.
-      </p>
-      <p>
-        I have been part of the Starbucks Green Apron Creator program for over a
-        year, beginning in the original pilot team of eight creators. Through
-        this program, I completed multiple training and mentorship programs
-        focused on content strategy, brand storytelling, and responsible digital
-        creation.
-      </p>
-      <p>
-        My work has been recognized internally and externally, including being
-        highlighted at the Starbucks Leadership Experience 2025 for successful
-        creator content. I also produce training videos designed to help new
-        creators understand topics such as content strategy, copyright, and
-        brand-safe storytelling.
-      </p>
-    </div>
-
     <section id="article">
       <div class="article--wrapper">
         <h1 class="article--h1">Featured Recognition</h1>
@@ -193,6 +169,30 @@ const videos = [
         </div>
       </div>
     </section>
+
+    <div class="text-wrapper">
+      <h1 class="content-header">About My Content</h1>
+      <p>
+        I create short-form video content centered around authentic
+        behind-the-scenes moments as a Starbucks barista. My content focuses on
+        storytelling, humor, and everyday experiences that resonate with both
+        customers and partners.
+      </p>
+      <p>
+        I have been part of the Starbucks Green Apron Creator program for over a
+        year, beginning in the original pilot team of eight creators. Through
+        this program, I completed multiple training and mentorship programs
+        focused on content strategy, brand storytelling, and responsible digital
+        creation.
+      </p>
+      <p>
+        My work has been recognized internally and externally, including being
+        highlighted at the Starbucks Leadership Experience 2025 for successful
+        creator content. I also produce training videos designed to help new
+        creators understand topics such as content strategy, copyright, and
+        brand-safe storytelling.
+      </p>
+    </div>
   </section>
 
   <div id="videoModal" class="modal">
@@ -300,19 +300,54 @@ const videos = [
     font-size: 0.9rem;
   }
 
-  .video-link {
+  .hero--wireframe-button {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 2px 2px 1px 1px var(--dark-text);
+
+    border-radius: 1rem;
+    transition: 0.1s ease;
+  }
+
+  /* .hero--wireframe-button:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+
+ */
+
+  .video-link,
+  .article--button {
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.4rem 0.9rem;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
-    color: white;
-    border-radius: 1rem;
-    text-decoration: none;
+    color: var(--light-text);
     font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 2px 2px 1px 1px var(--dark-text);
+    border-radius: 1rem;
+    transition: 0.1s ease;
   }
 
-  .video-link:hover {
-    opacity: 0.8;
+  .video-link:hover,
+  .article--button:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+
+  .video-link:active,
+  .article--button:active {
+    transform: translateY(2px) translateX(2px);
+    box-shadow: none;
   }
 
   .modal {
@@ -348,7 +383,7 @@ const videos = [
   #article {
     padding: 2rem 1.5rem;
     max-width: 1000px;
-    margin: 3rem auto 0 auto;
+    margin: 3rem auto 3rem auto;
     outline: 2px solid var(--dark-text);
     background-color: var(--background-color-light);
   }
@@ -420,7 +455,7 @@ const videos = [
   }
 
   /* BUTTON STYLING */
-  .article--button {
+  /* .article--button {
     margin-top: 0.5rem;
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
@@ -441,7 +476,7 @@ const videos = [
   .article--button:active {
     transform: translateY(2px) translateX(2px);
     box-shadow: none;
-  }
+  } */
 
   /* RESPONSIVE ADJUSTMENTS */
   @media (max-width: 768px) {
@@ -467,14 +502,14 @@ const videos = [
   .gac-recognition-description::before {
     content: "";
     display: block;
-    width: 80px;
+    width: 110px;
     height: 2px;
-    margin: 0.6rem auto 0 auto;
-    background-color: var(--primary-color);
+    margin: 0.6rem auto 1rem auto;
+    background-color: var(--dark-text);
   }
   /* Featured single landscape image */
   .article--featured-image {
-    margin-top: 3rem;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -494,10 +529,12 @@ const videos = [
   }
 
   .article--featured-caption {
+    width: 75%;
+    margin: auto;
     margin-top: 1rem;
-    font-size: 1.1rem;
-    text-align: center;
-    max-width: 800px;
+    font-size: 1rem;
+    text-align: left;
+    max-width: 900px;
     line-height: 1.4rem;
   }
 

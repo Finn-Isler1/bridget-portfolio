@@ -12,20 +12,35 @@ const links = [
 <header>
   <nav>
     {
-      links.map((link) => (
-        <a
-          href={link.href}
-          class:list={[
-            "nav-link",
-            {
-              active:
-                pathname.replace(/\/$/, "") === link.href.replace(/\/$/, ""),
-            },
-          ]}
-        >
-          {link.label}
-        </a>
-      ))
+      links.map((link) => {
+        const isHomeLink = link.href === "/bridget-portfolio/";
+        const isHome =
+          pathname === "/bridget-portfolio/" ||
+          pathname === "/bridget-portfolio";
+
+        let isActive = false;
+        if (isHomeLink) {
+          isActive = isHome;
+        } else {
+          const normalizedPath = pathname.replace(/\/$/, "");
+          const normalizedHref = link.href.replace(/\/$/, "");
+          isActive = normalizedPath === normalizedHref;
+        }
+
+        return (
+          <a
+            href={link.href}
+            class:list={[
+              "nav-link",
+              {
+                active: isActive,
+              },
+            ]}
+          >
+            {link.label}
+          </a>
+        );
+      })
     }
   </nav>
 </header>

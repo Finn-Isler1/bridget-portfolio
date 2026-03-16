@@ -103,7 +103,7 @@ const title = "Work";
     <div class="timeline--info">
       <div>
         <h2 class="timeline--h2">Impact & Outcome</h2>
-        <p>
+        <p class="timeline-description">
           This project revealed how thoughtful product design can influence user
           confidence and behavior. Insights from user interviews informed
           features that improve transparency, communication, and event
@@ -152,8 +152,11 @@ const title = "Work";
     grid-template-columns: 1fr 1fr;
   }
 
+  .hero--text {
+    margin-bottom: 6rem;
+  }
+
   .hero--h1 {
-    margin-top: 4rem;
     font-size: 4rem;
     font-family: var(--serif);
     font-weight: 500;
@@ -344,5 +347,9 @@ const title = "Work";
   .timeline--button-wrapper {
     display: flex;
     flex-direction: column;
+  }
+
+  .timeline-description {
+    font-size: 1.15rem;
   }
 </style>
