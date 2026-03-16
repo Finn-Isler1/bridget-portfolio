@@ -6,19 +6,19 @@ const currentPath = Astro.url.pathname;
 <div>
   <nav>
     <a
-      class={`nav--button ${currentPath === "/bridget-portfolio/work" ? "active" : ""}`}
+      class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/work".replace(/\/$/, "") ? "active" : ""}`}
       href="/bridget-portfolio/work"
     >
       UX/Product Design
     </a>
     <a
-      class={`nav--button ${currentPath === "/bridget-portfolio/content-creation" ? "active" : ""}`}
+      class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/content-creation".replace(/\/$/, "") ? "active" : ""}`}
       href="/bridget-portfolio/content-creation"
     >
       Content Creation
     </a>
     <a
-      class={`nav--button ${currentPath === "/bridget-portfolio/featured" ? "active" : ""}`}
+      class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/featured".replace(/\/$/, "") ? "active" : ""}`}
       href="/bridget-portfolio/featured"
     >
       Content Strategy
@@ -67,6 +67,6 @@ const currentPath = Astro.url.pathname;
   /* active/current page button background override */
   .nav--button.active {
     /* use a specific hex color rather than filters */
-    background-color: #4a4a9a;
+    opacity: 80%;
   }
 </style>

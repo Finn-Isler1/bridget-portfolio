@@ -15,7 +15,13 @@ const links = [
       links.map((link) => (
         <a
           href={link.href}
-          class:list={["nav-link", { active: pathname === link.href }]}
+          class:list={[
+            "nav-link",
+            {
+              active:
+                pathname.replace(/\/$/, "") === link.href.replace(/\/$/, ""),
+            },
+          ]}
         >
           {link.label}
         </a>
