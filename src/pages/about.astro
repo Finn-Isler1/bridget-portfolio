@@ -1,22 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 const title = "About";
 ---
-
 <Layout>
   <h1>About Me</h1>
   <section id="text">
+    <div class="images-left">
+      <img src="./thumb/sbx-hips.jpeg" alt="Starbucks" class="side-img" />
+      <img src="./thumb/shrek.jpeg" alt="Shrek" class="side-img" />
+    </div>
     <div class="text-wrapper">
       <p>
-        I’m a Computer Science student specializing in Human–Computer Interaction, with experience in digital marketing, content strategy, and audience engagement. My work combines UX research with storytelling to create content and campaigns that resonate with audiences and deliver measurable results.
+        I'm a Computer Science student specializing in Human–Computer Interaction, with a passion for bridging the gap between technology and the people who use it. My background spans UX research, digital marketing, content strategy, and audience engagement, and I love finding where those worlds overlap to tell stories that actually land.
       </p>
       <p>
-        Through the Starbucks Green Apron Creator program and managing a rapidly growing digital media brand, I’ve gained hands-on experience in social media strategy, brand partnerships, analytics, and content optimization.
+        Through the Starbucks Green Apron Creator program and building a rapidly growing digital media brand from the ground up, I've developed hands-on experience in social media strategy, brand partnerships, analytics, and content optimization. I'm driven by the belief that the best digital experiences aren't just functional; they're meaningful. Helping brands connect authentically with their audiences and using data to make those connections smarter is work I genuinely care about.
       </p>
       <p>
-        I’m passionate about helping brands connect authentically with audiences and using data-driven insights to improve digital engagement.
+        When I'm not in research mode or crafting content, you'll find me volunteering with the Humane Society of Charlotte, where I work with rescue dogs through training programs that help them find their forever homes. I'm also a devoted musical theatre fan. From Broadway to local productions, there's nothing quite like live performance. And whenever I can, I'm traveling, chasing new cultures, perspectives, and the kind of experiences that quietly reshape the way you see the world.
       </p>
+    </div>
+    <div class="images-right">
+      <img src="./thumb/tod.jpg" alt="Tod" class="side-img" />
+      <img src="./thumb/victoria2.jpeg" alt="Victoria" class="side-img" />
     </div>
   </section>
   <div class="spacer"></div>
@@ -31,8 +37,37 @@ const title = "About";
   }
 
   #text {
-    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 1300px;
+    margin: 0 auto;
     padding-bottom: 1rem;
+  }
+
+  .images-left,
+  .images-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .side-img {
+    width: 160px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    outline: 2px solid var(--dark-text);
+  }
+
+  .text-wrapper {
+    max-width: 800px;
+    padding: 1rem 1.5rem;
+    outline: 2px solid var(--dark-text);
+    background-color: var(--background-color-light);
+    flex: 1;
   }
 
   p {
@@ -45,10 +80,20 @@ const title = "About";
     min-height: 65vh;
   }
 
-  .text-wrapper {
-    padding: 1rem 1.5rem;
-    margin: auto;
-    outline: 2px solid var(--dark-text);
-    background-color: var(--background-color-light);
+  @media (max-width: 900px) {
+    #text {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .images-left,
+    .images-right {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .side-img {
+      width: 120px;
+    }
   }
 </style>
