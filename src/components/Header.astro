@@ -1,6 +1,5 @@
 ---
 const { pathname } = Astro.url;
-
 const links = [
   { href: "/bridget-portfolio/", label: "Home" },
   { href: "/bridget-portfolio/work", label: "Work" },
@@ -17,7 +16,6 @@ const links = [
         const isHome =
           pathname === "/bridget-portfolio/" ||
           pathname === "/bridget-portfolio";
-
         let isActive = false;
         if (isHomeLink) {
           isActive = isHome;
@@ -26,7 +24,6 @@ const links = [
           const normalizedHref = link.href.replace(/\/$/, "");
           isActive = normalizedPath === normalizedHref;
         }
-
         return (
           <a
             href={link.href}
@@ -44,21 +41,19 @@ const links = [
     }
   </nav>
 </header>
-
 <style>
+  /* ─── Base / Desktop ─────────────────────────────────────────── */
   header {
     background-color: var(--background-color-light);
     margin-top: 0.75rem;
     padding: 0 1rem;
   }
-
   nav {
     gap: 0.25rem;
     display: flex;
     align-items: center;
     height: 100%;
   }
-
   .nav-link {
     color: inherit;
     display: flex;
@@ -70,7 +65,6 @@ const links = [
     border-bottom: none;
     font-size: 1.5rem;
   }
-
   .active {
     height: 1.2rem;
     position: relative;
@@ -79,5 +73,50 @@ const links = [
     border-bottom: none;
     overflow: visible;
     z-index: 10;
+  }
+
+  /* ─── Tablet  (≤ 768px) — keep folder tabs, tighten padding ─── */
+  @media (max-width: 768px) {
+    header {
+      padding: 0 0.5rem;
+    }
+    nav {
+      /* Stay horizontal — DO NOT stack */
+      flex-direction: row;
+      gap: 0.2rem;
+    }
+    .nav-link {
+      padding: 0.5rem 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  /* ─── iPhone 14 / 15 / 16  (≤ 430px) ───────────────────────── */
+  /*     390 px logical width for 14/15 Pro, 430 px for Plus/Max   */
+  @media (max-width: 430px) {
+    header {
+      margin-top: 0.4rem;
+      padding: 0 0.25rem;
+    }
+    nav {
+      flex-direction: row; /* keep tabs side-by-side */
+      gap: 0.15rem;
+      width: 100%;
+    }
+    .nav-link {
+      /* Each tab stretches equally across the full width */
+      flex: 1;
+      justify-content: center;
+      padding: 0.35rem 0; /* slim vertical padding, no horizontal needed */
+      font-size: 0.78rem; /* readable but compact */
+      border-radius: 0.6rem 0.6rem 0 0; /* smaller rounded corners on phone */
+      white-space: nowrap;
+    }
+    /* Active tab — preserve the "lifted" folder effect */
+    .active {
+      height: auto; /* let font size drive the height naturally */
+      bottom: -2px;
+      margin-bottom: -2px;
+    }
   }
 </style>

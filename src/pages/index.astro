@@ -46,10 +46,10 @@ const title = "Home";
 
       <hr />
       <p class="article--description">
-        Recognized by <i>The Wall Street Journal</i> for high-performing digital
-          content, featured in coverage mentioned on <i
-            >The Tonight Show Starring Jimmy Fallon</i
-          >.
+        Recognized by <i>The Wall Street Journal</i> for high-performing digital content,
+        featured in coverage mentioned on <i
+          >The Tonight Show Starring Jimmy Fallon</i
+        >.
       </p>
 
       <div class="article--link-container">
@@ -402,6 +402,39 @@ const title = "Home";
       /* outline: 2px solid var(--dark-text); */
       box-shadow: 2px 2px 4px 1px var(--dark-text);
       opacity: 98%;
+    }
+
+    @media (max-width: 768px) {
+      .hero--wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+
+      .hero--h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero--h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero--image {
+        width: 12rem;
+      }
+
+      .article--link-container {
+        grid-template-columns: 1fr;
+      }
+
+      .page-link-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .page-link {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </Layout>

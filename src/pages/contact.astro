@@ -28,8 +28,6 @@ const title = "Contact";
   </section>
 </Layout>
 <style>
-  
-
   h1 {
     font-family: "Times New Roman", serif;
     font-size: 3rem;
@@ -79,5 +77,24 @@ const title = "Contact";
 
   .linkedIn:hover {
     opacity: 50%;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    .text-wrapper {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .col {
+      margin: 0 1rem;
+    }
+
+    .blurb-wrapper {
+      margin: 0 1rem 1rem 1rem;
+    }
   }
 </style>

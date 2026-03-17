@@ -157,29 +157,30 @@ const videos = [
         </p>
         <!-- NEW FEATURED IMAGE -->
         <div class="gac-image-row">
-  <div class="gac-image-item">
-    <img
-      class="gac-pilot-image"
-      src="/bridget-portfolio/thumb/green-apron-pilot.PNG"
-      alt="Green Apron Creator Program Recognition"
-    />
-    <p class="article--featured-caption">
-      Recognized as one of the pilot creators for the Green Apron Creator
-      Program’s success at the Starbucks Leadership Experience 2025.
-    </p>
-  </div>
+          <div class="gac-image-item">
+            <img
+              class="gac-pilot-image"
+              src="/bridget-portfolio/thumb/green-apron-pilot.PNG"
+              alt="Green Apron Creator Program Recognition"
+            />
+            <p class="article--featured-caption">
+              Recognized as one of the pilot creators for the Green Apron
+              Creator Program’s success at the Starbucks Leadership Experience
+              2025.
+            </p>
+          </div>
 
-  <div class="gac-image-item gac-image-narrow">
-    <img
-      src="/bridget-portfolio/assets/number-one.jpg"
-      alt="Ranked #1 Creator"
-    />
-    <p class="article--featured-caption">
-      Ranked <b>#1 out of 49 creators</b> in the Green Apron Creator Program
-      based on internal performance metrics.
-    </p>
-  </div>
-</div>
+          <div class="gac-image-item gac-image-narrow">
+            <img
+              src="/bridget-portfolio/assets/number-one.jpg"
+              alt="Ranked #1 Creator"
+            />
+            <p class="article--featured-caption">
+              Ranked <b>#1 out of 49 creators</b> in the Green Apron Creator Program
+              based on internal performance metrics.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -542,44 +543,44 @@ const videos = [
   }
 
   /* Green Apron recognition image row */
-.gac-image-row {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
+  .gac-image-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
 
-/* individual image block */
-.gac-image-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60%;
-  max-width: 600px;
-}
+  /* individual image block */
+  .gac-image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    max-width: 600px;
+  }
 
-/* narrow image */
-.gac-image-narrow {
-  width: 30%;
-  max-width: 280px;
-}
+  /* narrow image */
+  .gac-image-narrow {
+    width: 30%;
+    max-width: 280px;
+  }
 
-.gac-image-item img {
-  width: 100%;
-  border-radius: 1.5rem;
-  object-fit: cover;
-}
+  .gac-image-item img {
+    width: 100%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+  }
 
-/* caption alignment */
-.gac-image-item .article--featured-caption {
-  width: 100%;
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.4rem;
-}
+  /* caption alignment */
+  .gac-image-item .article--featured-caption {
+    width: 100%;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
 
   .article--featured-caption {
     width: 75%;
@@ -593,6 +594,47 @@ const videos = [
 
   i {
     font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    #content-creation {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .video-grid {
+      gap: 1rem;
+    }
+
+    .video-card {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      aspect-ratio: 9 / 16;
+    }
+
+    .modal video {
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .gac-image-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .gac-image-item {
+      width: 100%;
+      max-width: 600px;
+    }
   }
 </style>
 
