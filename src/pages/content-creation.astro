@@ -70,7 +70,7 @@ const videos = [
 
               <p class="video-description">{video.description}</p>
 
-              {video.views && <p class="video-views">{video.views}</p>}
+              <p class="video-views">{video.views || "\u00A0"}</p>
 
               <a class="video-link" href={video.tiktok} target="_blank">
                 Watch on TikTok
