@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #676fdf;
+  --primary-color: #000000;
   --secondary-color: #dde3ff;
   --background-color: #fdf5c8;
   --background-color-light: #fff6db;
@@ -10,7 +10,7 @@
   --sans: Helvetica, Arial, sans-serif;
   --serif: "Times New Roman", serif;
 }
-
+/* #676fdf */
 body {
   font-family: var(--sans);
   background-color: var(--background-color-light);

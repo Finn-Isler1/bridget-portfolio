@@ -5,12 +5,7 @@ const currentPath = Astro.url.pathname;
 
 <div>
   <nav>
-    <a
-      class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/work".replace(/\/$/, "") ? "active" : ""}`}
-      href="/bridget-portfolio/work"
-    >
-      UX/Product Design
-    </a>
+
     <a
       class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/content-creation".replace(/\/$/, "") ? "active" : ""}`}
       href="/bridget-portfolio/content-creation"
@@ -22,6 +17,12 @@ const currentPath = Astro.url.pathname;
       href="/bridget-portfolio/content-strategy"
     >
       Content Strategy
+    </a>
+    <a
+      class={`nav--button ${currentPath.replace(/\/$/, "") === "/bridget-portfolio/work".replace(/\/$/, "") ? "active" : ""}`}
+      href="/bridget-portfolio/work"
+    >
+      UX/Product Design
     </a>
   </nav>
 </div>
@@ -38,7 +39,7 @@ const currentPath = Astro.url.pathname;
 
   nav {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 5%;
     justify-content: center;
     align-items: center;
@@ -67,9 +68,9 @@ const currentPath = Astro.url.pathname;
   /* active/current page button background override */
   .nav--button.active {
     /* use a specific hex color rather than filters */
-    background-color: #5555c6;
+    background-color: #6d43d9;
     position: relative;
-
+/* #5555c6 */
     margin-bottom: -4px;
     height: 1.2rem;
     overflow: visible;
