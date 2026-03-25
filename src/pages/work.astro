@@ -10,8 +10,8 @@ const title = "Work";
   <WorkNav />
   <section id="hero">
     <div class="hero--text">
-      <h1 class="hero--h1">After Hours</h1>
-      <h2 class="hero--h2">Design Lead & Project Manager</h2>
+      <h1 class="hero--h1">After Hours App</h1>
+      <h2 class="hero--h2">Project Manager & Design Lead</h2>
       <p class="hero--description">
         This project explores how research and design can reveal insights about
         user behavior and digital engagement. The case study highlights my
@@ -103,7 +103,7 @@ const title = "Work";
     <div class="timeline--info">
       <div>
         <h2 class="timeline--h2">Impact & Outcome</h2>
-        <p class="timeline-description">
+        <p>
           This project revealed how thoughtful product design can influence user
           confidence and behavior. Insights from user interviews informed
           features that improve transparency, communication, and event
@@ -119,11 +119,20 @@ const title = "Work";
           href="https://www.figma.com/proto/SvTRGd8szfGc8ycCTKjruM/After-Hours?node-id=133-995&starting-point-node-id=125%3A1119&t=vAWGnumz9IZcQNwa-1"
           >View Figma Prototype</a
         >
+        <!-- <a
+          href="./assets/after-hours-case.pdf"
+          download="After_Hours_Case_Study"
+          class="hero--wireframe-button-hollow"
+        >
+          <button type="button">Download Case Study (PDF)</button>
+        </a> -->
         <a
           class="hero--wireframe-button-hollow"
-          href="/bridget-portfolio/assets/case-study.pdf"
-          download="After_Hours_Case_Study">Download Case Study (PDF)</a
+          href="/files/case-study.pdf"
+          download
         >
+          Download Case Study (PDF)
+        </a>
       </div>
     </div>
   </section>
@@ -144,11 +153,8 @@ const title = "Work";
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero--text {
-    margin-bottom: 6rem;
-  }
-
   .hero--h1 {
+    margin-top: 0rem;
     font-size: 4rem;
     font-family: var(--serif);
     font-weight: 500;
@@ -180,13 +186,14 @@ const title = "Work";
     margin-bottom: 0.5rem;
   }
 
-  .hero--role {
+    .hero--role {
     padding: 0.5rem 1rem;
     border-radius: 50rem;
-    background-color: var(--dark-text);
+    background-color: rgb(83, 28, 186);
     color: var(--light-text);
     font-weight: 600;
     font-size: 0.8rem;
+    margin-bottom: 8rem;
   }
 
   /* Right side hero section */
@@ -339,58 +346,5 @@ const title = "Work";
   .timeline--button-wrapper {
     display: flex;
     flex-direction: column;
-  }
-
-  .timeline-description {
-    font-size: 1.15rem;
-  }
-
-  @media (max-width: 768px) {
-    #hero {
-      grid-template-columns: 1fr;
-      padding: 0 1rem;
-    }
-
-    .hero--h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero--h2 {
-      font-size: 1.5rem;
-    }
-
-    .hero--role-list {
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .hero--wireframe-wrapper {
-      flex-direction: column;
-    }
-
-    .hero--wireframe {
-      width: 100%;
-      max-width: 320px;
-      margin: auto;
-    }
-
-    .timeline--wrapper {
-      flex-direction: column;
-      padding: 0 1rem;
-    }
-
-    .timeline--info {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 0 1rem;
-    }
-
-    .timeline--h1 {
-      font-size: 2.5rem;
-    }
-
-    .timeline--h2 {
-      font-size: 1.5rem;
-    }
   }
 </style>
