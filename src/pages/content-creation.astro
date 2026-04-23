@@ -83,6 +83,30 @@ const videos = [
     </div>
   </section>
   <section id="text">
+    <div class="text-wrapper">
+      <h1 class="content-header">About My Content</h1>
+      <p>
+        I create short-form video content centered around authentic
+        behind-the-scenes moments as a Starbucks barista. My content focuses on
+        storytelling, humor, and everyday experiences that resonate with both
+        customers and partners.
+      </p>
+      <p>
+        I have been part of the Starbucks Green Apron Creator program for over a
+        year, beginning in the original pilot team of eight creators. Through
+        this program, I completed multiple training and mentorship programs
+        focused on content strategy, brand storytelling, and responsible digital
+        creation.
+      </p>
+      <p>
+        My work has been recognized internally and externally, including being
+        highlighted at the Starbucks Leadership Experience 2025 for successful
+        creator content. I also produce training videos designed to help 40 new
+        creators understand topics such as content strategy, copyright, and
+        brand-safe storytelling.
+      </p>
+    </div>
+
     <section id="article">
       <div class="article--wrapper">
         <h1 class="article--h1">Featured Recognition</h1>
@@ -165,9 +189,9 @@ const videos = [
               alt="Green Apron Creator Program Recognition"
             />
             <p class="article--featured-caption">
-              Recognized as one of the pilot creators for the Green Apron
-              Creator Program’s success at the Starbucks Leadership Experience
-              2025.
+              Recognized at the Starbucks Leadership Experience
+              2025 as one of the pilot creators for the Green Apron
+              Creator Program’s success.
             </p>
           </div>
 
@@ -184,30 +208,6 @@ const videos = [
         </div>
       </div>
     </section>
-
-    <div class="text-wrapper">
-      <h1 class="content-header">About My Content</h1>
-      <p>
-        I create short-form video content centered around authentic
-        behind-the-scenes moments as a Starbucks barista. My content focuses on
-        storytelling, humor, and everyday experiences that resonate with both
-        customers and partners.
-      </p>
-      <p>
-        I have been part of the Starbucks Green Apron Creator program for over a
-        year, beginning in the original pilot team of eight creators. Through
-        this program, I completed multiple training and mentorship programs
-        focused on content strategy, brand storytelling, and responsible digital
-        creation.
-      </p>
-      <p>
-        My work has been recognized internally and externally, including being
-        highlighted at the Starbucks Leadership Experience 2025 for successful
-        creator content. I also produce training videos designed to help 40 new
-        creators understand topics such as content strategy, copyright, and
-        brand-safe storytelling.
-      </p>
-    </div>
   </section>
 
   <div id="videoModal" class="modal">
@@ -228,7 +228,7 @@ const videos = [
     margin: auto;
     outline: 2px solid var(--dark-text);
     background-color: var(--background-color-light);
-    max-width: 800px;
+    max-width: 1000px;
   }
 
   .content-header {
@@ -653,7 +653,7 @@ const videos = [
 </style>
 
 <script>
-  const modalPlayer = document.getElementById("modalVideo");
+  const modalPlayer = document.getElementById("modalVideo") as HTMLVideoElement | null;
   if (modalPlayer) {
     modalPlayer.addEventListener("error", () => {
       console.error("Video failed to load:", modalPlayer.error);
@@ -664,8 +664,8 @@ const videos = [
    * Get the configured video src for a given card index.
    * This keeps the modal synced with the rendered list.
    */
-  function getVideoSrcForIndex(index) {
-    const frame = document.querySelectorAll(".phone-frame")[index];
+  function getVideoSrcForIndex(index: number): string {
+    const frame = document.querySelectorAll(".phone-frame")[index] as HTMLElement | undefined;
     return frame?.dataset?.video ?? "";
   }
 
@@ -676,9 +676,14 @@ const videos = [
     });
   });
 
-  function openModal(index) {
-    const modal = document.getElementById("videoModal");
-    const player = document.getElementById("modalVideo");
+  function openModal(index: number): void {
+    const modal = document.getElementById("videoModal") as HTMLElement | null;
+    const player = document.getElementById("modalVideo") as HTMLVideoElement | null;
+
+    if (!modal || !player) {
+      console.error("Modal or player element not found");
+      return;
+    }
 
     const src = getVideoSrcForIndex(index);
     if (!src) {
@@ -687,28 +692,36 @@ const videos = [
     }
 
     player.src = src;
-    player?.load();
+    player.load();
 
     modal.style.display = "flex";
 
-    player.play().catch((err) => {
+    player.play().catch((err: Error) => {
       // Autoplay might be blocked; user can press play manually.
       console.warn("Video playback prevented:", err);
     });
   }
 
-  function closeModal() {
-    const modal = document.getElementById("videoModal");
-    const player = document.getElementById("modalVideo");
+  function closeModal(): void {
+    const modal = document.getElementById("videoModal") as HTMLElement | null;
+    const player = document.getElementById("modalVideo") as HTMLVideoElement | null;
+
+    if (!modal || !player) {
+      return;
+    }
 
     player.pause();
     modal.style.display = "none";
   }
 
   // Close modal when clicking outside the video
-  document.getElementById("videoModal").addEventListener("click", (e) => {
-    if (e.target.id === "videoModal") {
-      closeModal();
-    }
-  });
+  const modalEl = document.getElementById("videoModal");
+  if (modalEl) {
+    modalEl.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.id === "videoModal") {
+        closeModal();
+      }
+    });
+  }
 </script>
