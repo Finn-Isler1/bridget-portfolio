@@ -1,130 +1,564 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const title = "About";
-
-// /bridget-portfolio/assets/wsj-video.png
+import WorkNav from "../components/WorkNav.astro";
 ---
 
 <Layout>
-  <h1>About Me</h1>
-  <section id="text">
-    <div class="images-left">
-      <img
-        src="/bridget-portfolio/thumb/sbx-hips.jpeg"
-        alt="Starbucks"
-        class="side-img"
-      />
-      <img
-        src="/bridget-portfolio/thumb/shrek.jpeg"
-        alt="Shrek"
-        class="side-img"
-      />
+  <div class="spacer"></div>
+  <WorkNav />
+
+  <section id="hero">
+    <div class="hero--text">
+      <h1 class="hero--h1">Hi, I'm Bridget.</h1>
+      <h2 class="hero--h2">Social Media Strategist &nbsp;&middot;&nbsp; Content Creator &nbsp;&middot;&nbsp; Dog Lover</h2>
+      <p class="hero--description">
+        I grew up immersed in digital media, often puzzled by platforms that
+        fell short as a user. That frustration became a mission: understand
+        every critical element that makes a product truly succeed.
+      </p>
+      <p class="hero--description">
+        Earning a degree in Computer Science and Human-Computer Interaction gave
+        me the technical lens. Working as a Starbucks barista gave me the human
+        one.
+      </p>
+      <h3 class="hero--h3">What I bring:</h3>
+      <ul class="hero--role-list">
+        <li class="hero--role">Content Strategy</li>
+        <li class="hero--role">UX / HCI</li>
+        <li class="hero--role">Video Production</li>
+        <li class="hero--role">Brand Partnerships</li>
+      </ul>
     </div>
-    <div class="text-wrapper">
-      <p>
-        Hi, I'm Bridget! I'm a Computer Science professional specializing in Human–Computer
-        Interaction, with a passion for bridging the gap between technology and
-        the people who use it. My background spans UX research, digital
-        marketing, content strategy, and audience engagement, and I love finding
-        where those worlds overlap to tell stories that actually land.
-      </p>
-      <p>
-        Through the Starbucks Green Apron Creator program and building a rapidly
-        growing digital media brand from the ground up, I've developed hands-on
-        experience in social media strategy, brand partnerships, analytics, and
-        content optimization. I'm driven by the belief that the best digital
-        experiences aren't just functional; they're meaningful. Helping brands
-        connect authentically with their audiences and using data to make those
-        connections smarter is work I genuinely care about.
-      </p>
-      <p>
-        When I'm not in research mode or crafting content, you'll find me
-        volunteering with the Humane Society of Charlotte, where I work with
-        rescue dogs through training programs that help them find their forever
-        homes. I'm also a devoted musical theatre fan. From Broadway to local
-        productions, there's nothing quite like live performance. And whenever I
-        can, I'm traveling, chasing new cultures, perspectives, and the kind of
-        experiences that quietly reshape the way you see the world.
-      </p>
-    </div>
-    <div class="images-right">
-      <img src="/bridget-portfolio/thumb/tod.jpg" alt="Tod" class="side-img" />
+
+    <div class="hero--picture-section">
       <img
-        src="/bridget-portfolio/thumb/victoria2.jpeg"
-        alt="Victoria"
-        class="side-img"
+        class="hero--portrait"
+        src="/bridget-portfolio/assets/headshot.png"
+        alt="Bridget, professional headshot"
       />
     </div>
   </section>
-  <div class="spacer"></div>
+
+  <hr class="section-divider" />
+
+  <section id="story">
+    <h2 class="story--h1">My Story</h2>
+    <hr class="story--hr" />
+
+    <div class="story--grid">
+
+      <div class="story--beat">
+        <img
+          class="story--beat-img"
+          src="/bridget-portfolio/assets/graduation.png"
+          alt="Bridget at graduation"
+        />
+        <p class="story--beat-label">Where it started</p>
+        <p class="story--beat-text">
+          I came to Computer Science and Human-Computer Interaction wanting to
+          bridge the gap between technical systems and real human experience.
+          I wanted to build things people genuinely love using.
+        </p>
+      </div>
+
+      <div class="story--beat">
+        <img
+          class="story--beat-img"
+          src="/bridget-portfolio/assets/barista-making-drinks.png"
+          alt="Bridget making drinks at Starbucks"
+        />
+        <p class="story--beat-label">The opportunity that changed everything</p>
+        <p class="story--beat-text">
+          While working as a barista, I was one of eight creators selected
+          nationally for Starbucks' first barista-influencer program, the Green
+          Apron Creators. I was combining my CS education with real digital
+          marketing training and my own creative instincts to make content that
+          actually performed.
+        </p>
+      </div>
+
+      <div class="story--beat">
+        <img
+          class="story--beat-img"
+          src="/bridget-portfolio/assets/number-one.jpg"
+          alt="Ranked number one out of 49 creators"
+        />
+        <p class="story--beat-label">Recognition that followed</p>
+        <p class="story--beat-text">
+          Starbucks was thrilled with the results. I became their top creator
+          out of 49, was featured in <i>The Wall Street Journal</i> (which was
+          later mentioned on <i>The Tonight Show Starring Jimmy Fallon</i>), and
+          was recognized at the Starbucks Leadership Experience 2025.
+        </p>
+      </div>
+
+      <div class="story--beat">
+        <img
+          class="story--beat-img"
+          src="/bridget-portfolio/assets/analytics.png"
+          alt="Content analytics dashboard"
+        />
+        <p class="story--beat-label">Giving back and growing further</p>
+        <p class="story--beat-text">
+          After completing the GAC mentorship program, I produced training
+          videos introducing 40 new creators to content strategy, brand safety,
+          and marketing. I also helped an independent creator build their
+          platform from the ground up and grow into a viral sensation.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat--number">#1</span>
+      <span class="stat--label">of 49 creators</span>
+    </div>
+    <div class="stat">
+      <span class="stat--number">840K</span>
+      <span class="stat--label">top video views</span>
+    </div>
+    <div class="stat">
+      <span class="stat--number">40+</span>
+      <span class="stat--label">creators trained</span>
+    </div>
+    <div class="stat">
+      <span class="stat--number">WSJ</span>
+      <span class="stat--label">featured</span>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <section id="volunteer">
+    <div class="volunteer--wrapper">
+      <div class="volunteer--text">
+        <h2 class="volunteer--h2">Beyond the Work</h2>
+        <p class="volunteer--meta">Humane Society of Charlotte &nbsp;&middot;&nbsp; January 2025 – April 2026</p>
+        <p class="volunteer--description">
+          Outside of content creation, I volunteered at the Humane Society of
+          Charlotte. I supported dog training classes using positive
+          reinforcement techniques, walked and cared for dogs daily, and used
+          my content skills to capture photos and videos of adoptable dogs to
+          boost their visibility on social media.
+        </p>
+        <p class="volunteer--description">
+          It is a small reminder that the tools I have developed can do more
+          than build brands. They can find dogs a home.
+        </p>
+      </div>
+
+      <div class="volunteer--images">
+        
+        <img
+          class="volunteer--img"
+          src="/bridget-portfolio/assets/volunteer-filming.png"
+          alt="Bridget photographing an adoptable dog"
+        />
+        <img
+          class="volunteer--img"
+          src="/bridget-portfolio/assets/volunteer-shelter.png"
+          alt="Bridget volunteering at the shelter"
+        />
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="closing">
+    <div class="closing--wrapper">
+      <div class="closing--text">
+        <p>
+          Every experience, the technical education, the barista shifts, the
+          viral videos, the training programs, the shelter mornings, has pointed
+          me toward the same goal: I want to contribute my talents to products
+          that genuinely matter to people.
+        </p>
+        <p>
+          I am looking for a role where creativity, strategy, and
+          human-centered thinking all belong in the same room.
+        </p>
+        
+        <a
+          href="/bridget-portfolio/content-creation"
+          class="hero--button">View My Work</a
+        >
+        <a href="/bridget-portfolio/contact" class="hero--button">Contact</a>
+      </div>
+
+      <div class="closing--grid">
+        
+        <img
+          class="closing--img"
+          src="/bridget-portfolio/assets/headshot-casual.png"
+          alt="Bridget, casual portrait"
+        />
+      </div>
+    </div>
+  </section>
 </Layout>
+
 <style>
-  h1 {
-    font-family: "Times New Roman", serif;
-    font-size: 3rem;
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+  .spacer {
+    height: 8px;
   }
 
-  #text {
+  i {
+    font-style: italic;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--dark-text);
+    margin: 0 0 2.5rem;
+  }
+
+  /* ── HERO ── */
+
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem 3rem 3rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .hero--h1 {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero--h2 {
+    font-size: 1.35rem;
+    font-weight: 200;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero--description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .hero--h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero--role-list {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1.25rem;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
   }
 
-  .images-left,
-  .images-right {
+  .hero--role {
+    padding: 0.4rem 1rem;
+    border-radius: 50rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .hero--picture-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero--portrait {
+    width: 100%;
+    max-width: 420px;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1.5rem;
+    outline: 2px solid var(--dark-text);
+    box-shadow: 4px 4px 0px 1px var(--dark-text);
+  }
+
+  /* ── STORY ── */
+
+  #story {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 3rem;
+  }
+
+  .story--h1 {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .story--hr {
+    border: none;
+    border-top: 1px solid var(--dark-text);
+    margin-bottom: 2rem;
+  }
+
+  .story--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .story--beat {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    flex-shrink: 0;
+    gap: 0.75rem;
   }
 
-  .side-img {
-    width: 160px;
-    aspect-ratio: 3 / 4;
+  .story--beat-img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    outline: 2px solid var(--dark-text);
+    object-position: top;
+    border-radius: 1.25rem;
+    outline: 1px solid var(--dark-text);
   }
 
-  .text-wrapper {
-    max-width: 800px;
-    padding: 1rem 1.5rem;
-    outline: 2px solid var(--dark-text);
+  .story--beat-label {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .story--beat-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #333;
+  }
+
+  /* ── STATS ── */
+
+  .stats-bar {
     background-color: var(--background-color-light);
-    flex: 1;
+    outline: 1px solid var(--dark-text);
+    padding: 1.75rem 2rem;
+    margin: 0 0 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
   }
 
-  p {
-    margin-top: 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
   }
 
-  section {
-    min-height: 65vh;
+  .stat--number {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
   }
 
-  @media (max-width: 900px) {
-    #text {
-      flex-direction: column;
-      align-items: center;
+  .stat--label {
+    font-size: 0.78rem;
+    color: #666;
+    text-align: center;
+  }
+
+  /* ── VOLUNTEER ── */
+
+  #volunteer {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 3rem;
+  }
+
+  .volunteer--wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .volunteer--h2 {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .volunteer--meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1.25rem;
+  }
+
+  .volunteer--description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .volunteer--images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.75rem;
+  }
+
+  .volunteer--img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+    outline: 1px solid var(--dark-text);
+  }
+
+  .volunteer--img-large {
+    grid-column: span 2;
+    height: 300px;
+  }
+
+  /* ── CLOSING ── */
+
+  #closing {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 0 3rem;
+  
+  }
+
+  .closing--wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    
+  }
+
+  .closing--text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .closing--grid {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    gap: 0.75rem;
+    
+  }
+
+  .closing--img {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1rem;
+    outline: 1px solid var(--dark-text);
+    transition: transform 0.2s ease;
+    margin-left: 25%;
+    margin-bottom: 1rem;
+
+  }
+
+  .closing--img:hover {
+    transform: scale(1.03);
+  }
+.hero--button {
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 2px 2px 1px 1px var(--dark-text);
+
+      border-radius: 1.25rem;
+      margin: auto;
+      transition: 0.1s ease;
+      margin-right: 5%;
     }
 
-    .images-left,
-    .images-right {
-      flex-direction: row;
-      justify-content: center;
+    .hero--button:hover {
+      opacity: 70%;
+      cursor: pointer;
     }
 
-    .side-img {
-      width: 120px;
+    .hero--button:active {
+      transform: translateY(2px) translateX(2px);
+      box-shadow: none;
     }
+  /* ── RESPONSIVE ── */
+
+  @media (max-width: 768px) {
+    #hero {
+      grid-template-columns: 1fr;
+      padding: 1rem 1.25rem 2rem;
+      gap: 1.5rem;
+    }
+
+    .hero--h1 {
+      font-size: 2.75rem;
+    }
+
+    .hero--portrait {
+      max-width: 100%;
+      height: 420px;
+    }
+
+    #story {
+      padding: 0 1.25rem;
+    }
+
+    .story--grid {
+      grid-template-columns: 1fr;
+    }
+
+    .story--h1 {
+      font-size: 2.25rem;
+    }
+
+    #volunteer {
+      padding: 0 1.25rem;
+    }
+
+    .volunteer--wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .volunteer--h2 {
+      font-size: 2rem;
+    }
+
+    #closing {
+      padding: 0 1.25rem;
+    }
+
+    .closing--wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .closing--text p {
+      font-size: 1rem;
+    }
+
+    .stats-bar {
+      gap: 1.5rem;
+    }
+
+    
   }
 </style>
