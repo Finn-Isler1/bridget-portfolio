@@ -230,32 +230,38 @@ const videos = [
         <p class="gac-recognition-description">
           Green Apron Creator Program Recognition
         </p>
-        <!-- NEW FEATURED IMAGE -->
-        <div class="gac-image-row">
-          <div class="gac-image-item">
-            <img
-              class="gac-pilot-image"
-              src="/bridget-portfolio/thumb/green-apron-pilot.PNG"
-              alt="Green Apron Creator Program Recognition"
-            />
-            <p class="article--featured-caption">
-              Recognized at the Starbucks Leadership Experience
-              2025 as one of the pilot creators for the Green Apron
-              Creator Program’s success.
-            </p>
-          </div>
+<!-- NEW FEATURED IMAGE -->
+<div class="gac-image-row">
+  <div class="gac-image-item">
+    <img
+      class="gac-pilot-image"
+      src="/bridget-portfolio/thumb/green-apron-pilot.PNG"
+      alt="Green Apron Creator Program Recognition"
+    />
+    <p class="article--featured-caption">
+      Recognized at the Starbucks Leadership Experience
+      2025 as one of the pilot creators for the Green Apron
+      Creator Program's success.
+    </p>
+  </div>
+  <div class="gac-image-item gac-image-narrow">
+    <img
+      src="/bridget-portfolio/assets/number-one.jpg"
+      alt="Ranked #1 Creator"
+    />
+    <p class="article--featured-caption">
+      Ranked <b>#1 out of 49 creators</b> in the Green Apron Creator Program
+      based on internal performance metrics.
+    </p>
+  </div>
+</div>
 
-          <div class="gac-image-item gac-image-narrow">
-            <img
-              src="/bridget-portfolio/assets/number-one.jpg"
-              alt="Ranked #1 Creator"
-            />
-            <p class="article--featured-caption">
-              Ranked <b>#1 out of 49 creators</b> in the Green Apron Creator Program
-              based on internal performance metrics.
-            </p>
-          </div>
-        </div>
+<div class="gac-image-full">
+  <img
+    src="/bridget-portfolio/assets/rec.png"
+    alt="LinkedIn Recommendation"
+  />
+</div>
       </div>
     </section>
   </section>
@@ -404,7 +410,24 @@ const videos = [
   font-size: 0.95rem;
   line-height: 1.4rem;
 }
+.gac-image-full {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
 
+.gac-image-full img {
+  width: 92%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .gac-image-full img {
+    width: 100%;
+  }
+}
 /* Impact */
 .case-study--impact {
   display: flex;
