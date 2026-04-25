@@ -61,8 +61,8 @@ const videos = [
                 src={video.src}
                 muted
                 loop
-                autoplay
                 playsinline
+                preload="auto"
               />
             </div>
 
@@ -82,30 +82,80 @@ const videos = [
       }
     </div>
   </section>
-  <section id="text">
-    <div class="text-wrapper">
-      <h1 class="content-header">About My Content</h1>
-      <p>
-        I create short-form video content centered around authentic
-        behind-the-scenes moments as a Starbucks barista. My content focuses on
-        storytelling, humor, and everyday experiences that resonate with both
-        customers and partners.
-      </p>
-      <p>
-        I have been part of the Starbucks Green Apron Creator program for over a
-        year, beginning in the original pilot team of eight creators. Through
-        this program, I completed multiple training and mentorship programs
-        focused on content strategy, brand storytelling, and responsible digital
-        creation.
-      </p>
-      <p>
-        My work has been recognized internally and externally, including being
-        highlighted at the Starbucks Leadership Experience 2025 for successful
-        creator content. I also produce training videos designed to help 40 new
-        creators understand topics such as content strategy, copyright, and
-        brand-safe storytelling.
-      </p>
+<section id="text">
+  <div class="case-study--hero">
+    <div class="case-study--left">
+      <h2 class="case-study--h2">Employee-Driven Social Content</h2>
+      <h3 class="case-study--h3">Starbucks Green Apron Creator Program</h3>
+      <p>Short-form video content highlighting employee experiences, product moments, and training culture to support brand awareness and authentic storytelling at scale.</p>
+      <p>Translated high-level brand briefs into fully developed video concepts—written, filmed, edited, and published independently—optimized for short-form engagement and shareability.</p>
+      <p class="case-study--roles-label">My Roles:</p>
+      <div class="case-study--roles">
+        <span class="case-study--role">Content Strategy</span>
+        <span class="case-study--role">Video Production</span>
+        <span class="case-study--role">Brand Storytelling</span>
+        <span class="case-study--role">Training Content</span>
+      </div>
     </div>
+    <div class="case-study--right">
+      <div class="case-study--stats">
+        <div class="case-study--stat">
+          <span class="case-study--stat-number">840K</span>
+          <span class="case-study--stat-label">Top Video Views</span>
+        </div>
+        <div class="case-study--stat">
+          <span class="case-study--stat-number">12K</span>
+          <span class="case-study--stat-label">Shares</span>
+        </div>
+        <div class="case-study--stat">
+          <span class="case-study--stat-number">#1</span>
+          <span class="case-study--stat-label">of 49 Creators</span>
+        </div>
+      </div>
+      <hr class="case-study--divider" />
+      <p>Part of the original pilot team of eight creators in the Starbucks Green Apron Creator Program. Recognized at the Starbucks Leadership Experience 2025 and featured in <i>The Wall Street Journal</i> and <i>The Tonight Show Starring Jimmy Fallon</i>.</p>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="case-study--process">
+    <h1 class="case-study--process-h1">Process</h1>
+    <hr class="case-study--process-hr" />
+    <div class="process--cards">
+      <div class="process--card">
+        <p class="process--card-title">Creative Direction</p>
+        <p class="process--card-desc">Developed original video concepts from high-level campaign briefs, translating brand goals into relatable storytelling angles.</p>
+      </div>
+      <div class="process--card">
+        <p class="process--card-title">Script & Story Structure</p>
+        <p class="process--card-desc">Wrote concepts and scripts with clear hooks, narrative beats, and payoffs optimized for short-form retention.</p>
+      </div>
+      <div class="process--card">
+        <p class="process--card-title">Independent Production</p>
+        <p class="process--card-desc">Filmed and edited each video independently using iPhone, tripod, CapCut, Adobe tools, and in-app editing.</p>
+      </div>
+      <div class="process--card">
+        <p class="process--card-title">Format Diversity</p>
+        <p class="process--card-desc">Produced across day-in-the-life, seasonal promotions, product highlights, and internal training content formats.</p>
+      </div>
+      <div class="process--card">
+        <p class="process--card-title">Campaign Alignment</p>
+        <p class="process--card-desc">Coordinated content timing with product launches like Red Cup Day and seasonal promotions for maximum visibility.</p>
+      </div>
+      <div class="process--card">
+        <p class="process--card-title">Creator Training</p>
+        <p class="process--card-desc">Produced training videos for 40 new creators covering content strategy, copyright, and brand-safe storytelling.</p>
+      </div>
+    </div>
+    <div class="case-study--impact">
+      <div class="case-study--impact-text">
+        <h2 class="case-study--impact-h2">Impact & Outcome</h2>
+        <p class="case-study--impact-desc">Authentic, employee-led storytelling consistently outperformed traditional promotional content. The highest-performing video reached 840K views, 12K shares, 24K likes, and 4K saves. A second top video achieved 250K views with strong customer engagement. Content increased visibility for seasonal campaigns like Red Cup Day and earned external recognition in <i>The Wall Street Journal</i>—demonstrating the power of relatable, human-centered marketing in driving engagement and brand connection.</p>
+      </div>
+    </div>
+  </div>
+
 
     <section id="article">
       <div class="article--wrapper">
@@ -220,6 +270,174 @@ const videos = [
 </Layout>
 
 <style>
+  /* Case Study Hero */
+.case-study--hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  align-items: start;
+}
+
+.case-study--h2 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.case-study--h3 {
+  font-size: 1.25rem;
+  font-weight: 200;
+  margin-bottom: 1.5rem;
+}
+
+.case-study--left p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.case-study--roles-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--serif);
+  margin-bottom: 0.5rem;
+}
+
+.case-study--roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.case-study--role {
+  padding: 0.4rem 1rem;
+  border-radius: 50rem;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.case-study--right {
+  outline: 1px solid var(--dark-text);
+  background-color: var(--background-color-light);
+  padding: 1.5rem;
+}
+
+.case-study--right p {
+  font-size: 1rem;
+  line-height: 1.55rem;
+}
+
+.case-study--stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.case-study--stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.case-study--stat-number {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.case-study--stat-label {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.case-study--divider {
+  margin: 1rem 0;
+}
+
+/* Process */
+.case-study--process {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.case-study--process-h1 {
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+.case-study--process-hr {
+  margin-bottom: 2rem;
+}
+
+.process--cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.process--card {
+  flex: 1 1 calc(33% - 1rem);
+  background-color: var(--background-color-light);
+  padding: 1rem;
+  outline: 1px solid var(--dark-text);
+  border-radius: 1rem;
+}
+
+.process--card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.process--card-desc {
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+
+/* Impact */
+.case-study--impact {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.case-study--impact-text {
+  width: 100%;
+  max-width: 800px;
+}
+
+.case-study--impact-h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+
+.case-study--impact-desc {
+  font-size: 1.15rem;
+  line-height: 1.7rem;
+}
+
+@media (max-width: 768px) {
+  .case-study--hero {
+    grid-template-columns: 1fr;
+  }
+  .process--card {
+    flex: 1 1 100%;
+  }
+}
+  
   .text-wrapper {
     margin-top: 1rem;
     font-size: 1.25rem;
@@ -295,6 +513,7 @@ const videos = [
     overflow: hidden;
     cursor: pointer;
     transition: 0.2s;
+    background-color: #000;
   }
 
   .phone-frame:hover {
@@ -306,6 +525,22 @@ const videos = [
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    display: block;
+    background-color: #000;
+    will-change: transform, opacity;
+  }
+
+  /* Ensure video container is always visible */
+  .phone-frame video {
+    opacity: 1;
+    visibility: visible;
+    transform: translateZ(0);
+  }
+
+  /* Prevent any hover-based transform conflicts */
+  .phone-frame {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .video-info {
@@ -654,6 +889,50 @@ const videos = [
 </style>
 
 <script>
+  // Robust video handling to prevent glitching
+  function initVideo(video: HTMLVideoElement) {
+    // Ensure video is ready
+    video.preload = "auto";
+    
+    const playVideo = () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    };
+
+    // Wait for video to be ready before playing
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo, { once: true });
+    }
+    
+    video.addEventListener("stalled", () => {
+      video.load();
+    });
+    
+    video.addEventListener("error", () => {
+      video.load();
+    });
+  }
+
+  // Initialize all preview videos
+  document.querySelectorAll(".preview-video").forEach((video) => {
+    initVideo(video as HTMLVideoElement);
+  });
+
+  // Handle hover states to ensure videos play consistently
+  document.querySelectorAll(".phone-frame").forEach((frame) => {
+    const video = frame.querySelector(".preview-video") as HTMLVideoElement | null;
+    if (!video) return;
+
+    frame.addEventListener("mouseenter", () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    });
+  });
+
   const modalPlayer = document.getElementById("modalVideo") as HTMLVideoElement | null;
   if (modalPlayer) {
     modalPlayer.addEventListener("error", () => {
