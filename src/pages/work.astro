@@ -5,9 +5,129 @@ import WorkNav from "../components/WorkNav.astro";
 const title = "Work";
 ---
 
-<Layout>
+<Layout title={title}>
   <div class="spacer"></div>
   <WorkNav />
+
+  <!-- LENOVO PROJECT (NEW) -->
+  <section id="hero">
+    <div class="hero--text">
+      <h1 class="hero--h1">Lenovo Retail Website</h1>
+      <h2 class="hero--h2">Project Manager & Design Lead</h2>
+      <p class="hero--description">
+        A redesign of Lenovo's retail website focused on reducing information
+        overload and visual clutter. This case study documents how our team
+        identified usability problems, redesigned the experience, and validated
+        improvements through user testing.
+      </p>
+      <h3 class="hero--h3">My Roles:</h3>
+      <ul class="hero--role-list">
+        <li class="hero--role">UX Research</li>
+        <li class="hero--role">Design</li>
+        <li class="hero--role">Prototyping</li>
+      </ul>
+    </div>
+    <div class="hero--picutre-section">
+      <div class="hero--wireframe-wrapper lenovo">
+        <img
+          class="hero--wireframe"
+          src="/bridget-portfolio/assets/lenovo-wireframe-1.png"
+          alt="Lenovo wireframe 1"
+        />
+      </div>
+      <div class="hero--wireframe-text-wrapper">
+        <p class="hero--wireframe-description">
+          Working with a team of four, we redesigned the Lenovo retail website
+          to reduce cognitive overload, remove unnecessary pop-ups, and
+          streamline the shopping experience for users who struggle with
+          information-dense interfaces.
+        </p>
+        <a
+          target="_blank"
+          class="hero--wireframe-button"
+          href="https://www.figma.com/proto/GTMAkQMjyicyL8ismbZvNS/Capstone---Team-9?node-id=12-4&t=kFHPpgGDUJmqCndh-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=12%3A4&show-proto-sidebar=1"
+        >Figma Link</a>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section id="timeline">
+    <h1 class="timeline--h1">Process</h1>
+    <hr class="timeline--hr" />
+    <div class="lenovo--screenshots">
+  <img class="lenovo--screenshot" src="/bridget-portfolio/assets/lenovo-wireframe-3.png" alt="Lenovo final screen 3" />
+  <img class="lenovo--screenshot" src="/bridget-portfolio/assets/lenovo-wireframe-2.png" alt="Lenovo final screen 2" />
+  <img class="lenovo--screenshot" src="/bridget-portfolio/assets/lenovo-wireframe-1.png" alt="Lenovo final screen 1" />
+</div>
+    <div class="timeline--wrapper">
+      <div class="timeline--card">
+        <p class="timeline--card-title">User Research</p>
+        <p class="timeline--card-description">
+          Conducted peer testing, think-aloud sessions, and classroom
+          observation to identify pain points.
+        </p>
+      </div>
+      <div class="timeline--card">
+        <p class="timeline--card-title">Problem Definition</p>
+        <p class="timeline--card-description">
+          Identified visual clutter, unclear labels, and disruptive pop-ups as
+          the core usability issues.
+        </p>
+      </div>
+      <div class="timeline--card">
+        <p class="timeline--card-title">Ideation</p>
+        <p class="timeline--card-description">
+          Sketched simplified layouts focused on cleaner navigation and
+          real-world shopping expectations.
+        </p>
+      </div>
+      <div class="timeline--card">
+        <p class="timeline--card-title">Wireframing</p>
+        <p class="timeline--card-description">
+          Built low-fidelity wireframes to test the redesigned search, filter,
+          and product flow.
+        </p>
+      </div>
+      <div class="timeline--card">
+        <p class="timeline--card-title">User Testing</p>
+        <p class="timeline--card-description">
+          Tested task completion across search, cart, checkout, and feedback
+          features with real users.
+        </p>
+      </div>
+      <div class="timeline--card">
+        <p class="timeline--card-title">Final Prototype</p>
+        <p class="timeline--card-description">
+          Delivered a high-fidelity prototype reflecting a cleaner, more
+          organized shopping experience.
+        </p>
+      </div>
+    </div>
+    <div class="timeline--info">
+      <div>
+        <h2 class="timeline--h2">Impact & Outcome</h2>
+        <p>
+          Most major tasks were completed successfully during testing. Search
+          and navigation became the strongest parts of the redesign after
+          revisions. The final version is more organized and closely mirrors a
+          real retail shopping experience — with no unnecessary pop-ups and a
+          clearer visual hierarchy throughout.
+        </p>
+      </div>
+      <div class="timeline--button-wrapper">
+        <div class="v-spacer"></div>
+        <a
+          target="_blank"
+          class="hero--wireframe-button"
+          href="https://bridgetbaron.github.io/Capstone_Team_9/index.html"
+          >View Live Demo</a
+        >
+      </div>
+    </div>
+  </section>
+  <hr />
+
+  <!-- AFTER HOURS PROJECT (EXISTING) -->
   <section id="hero">
     <div class="hero--text">
       <h1 class="hero--h1">After Hours App</h1>
@@ -153,6 +273,10 @@ const title = "Work";
     grid-template-columns: 1fr 1fr;
   }
 
+  .hero--text:first-of-type {
+    padding-top: 5rem;
+  }
+
   .hero--h1 {
     margin-top: 0rem;
     font-size: 4rem;
@@ -203,6 +327,9 @@ const title = "Work";
     background-color: var(--background-color-light);
     margin: 2rem 1rem;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
   }
 
   .hero--wireframe-wrapper {
@@ -217,7 +344,25 @@ const title = "Work";
     margin: auto;
     outline: 1px solid var(--dark-text);
     box-shadow: 2px 2px 1px 1px var(--dark-text);
-    border-radius: 1rem;
+    border-radius: .25rem;
+  }
+
+  .lenovo .hero--wireframe-wrapper {
+    gap: 2rem;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+  
+  }
+
+  .lenovo .hero--wireframe {
+    flex: none;
+    height: 200px;
+    aspect-ratio: 1.4;
+    object-fit: cover;
+    width: auto;
+    margin: auto;
   }
 
   .hero--wireframe-text-wrapper {
@@ -281,7 +426,44 @@ const title = "Work";
     transform: translateY(2px) translateX(2px);
     box-shadow: none;
   }
+/* Lenovo image overrides */
+.hero--wireframe.lenovo {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
 
+.hero--wireframe-wrapper.lenovo {
+  padding: 1rem 0.5rem;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero--wireframe-wrapper.lenovo .hero--wireframe {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.lenovo--screenshots {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0 3rem 2rem 3rem;
+}
+
+.lenovo--screenshot {
+  flex: 1;
+  width: 0;
+  aspect-ratio: 1.4 / 1;
+  object-fit: contain;
+  outline: 1px solid var(--dark-text);
+  box-shadow: 2px 2px 1px 1px var(--dark-text);
+  border-radius: 0.5rem;
+  background-color: var(--background-color-light);
+}
   /* Timeline */
 
   #timeline {
